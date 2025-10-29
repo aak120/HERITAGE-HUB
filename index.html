@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>HeritageHub — Marathi Culture</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="topbar" role="banner">
+  <div class="wrap">
+    <div class="brand">HeritageHub</div>
+    <nav class="nav" aria-label="Main">
+      <button class="nav-btn" data-page="home">Home</button>
+      <button class="nav-btn" data-page="stories">Stories</button>
+      <button class="nav-btn" data-page="artifacts">Artifacts</button>
+      <button class="nav-btn" data-page="chat">Chat</button>
+    </nav>
+    <div class="search-area">
+      <input id="header-search" type="search" placeholder="Search..." aria-label="Search site">
+      <button id="header-search-btn" title="Search">🔍</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- HOME -->
+  <section id="page-home" class="page">
+    <div class="hero">
+      <img src="https://via.placeholder.com/1200x360?text=Heritage+of+Maharashtra" alt="Marathi festival" />
+      <div class="hero-text">
+        <h1>Discover Marathi Culture</h1>
+        <p class="lead">Explore the rich heritage of Maharashtra through artifacts, stories, games, and interactive learning.</p>
+      </div>
+    </div>
+
+    <section class="home-grid">
+      <article class="card">
+        <h2>Match the Artifact (Mini Game)</h2>
+        <p class="muted">Drag the artifact name onto the correct picture.</p>
+        <div id="home-game" class="game-area"></div>
+        <div id="home-game-feedback" class="muted" aria-live="polite"></div>
+        <button class="btn" id="home-reset">Reset game</button>
+      </article>
+
+      <article class="card">
+        <h2>Vision & Mission</h2>
+        <p><strong>Vision:</strong> Reduce cultural isolation and make heritage accessible.</p>
+        <p><strong>Mission:</strong> Create an engaging website using stories, maps, quizzes, and private chat to learn about Marathi culture.</p>
+        <h3>Main functionalities</h3>
+        <ul>
+          <li>Search artifacts & stories</li>
+          <li>Interactive game and mini quizzes</li>
+          <li>Private one-on-one chat with culture experts</li>
+          <li>Embed maps & multimedia resources</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Quick Pick</h2>
+        <p>Preview an artifact before visiting the Artifact page.</p>
+        <div class="artifact-preview" id="artifact-preview"></div>
+        <button class="btn" id="view-artifact">View artifact page</button>
+      </article>
+    </section>
+  </section>
+
+  <!-- STORIES -->
+  <section id="page-stories" class="page hidden">
+    <h1>Stories & Spotlights</h1>
+    <div id="stories-list" class="stories-list"></div>
+  </section>
+
+  <!-- ARTIFACTS -->
+  <section id="page-artifacts" class="page hidden">
+    <div class="artifact-header">
+      <h1>Artifacts</h1>
+      <div class="artifact-select">
+        <label for="artifact-select">Choose artifact:</label>
+        <select id="artifact-select" aria-label="Select artifact"></select>
+      </div>
+    </div>
+
+    <div class="artifact-main">
+      <div class="artifact-left">
+        <div class="artifact-card" id="artifact-card">
+          <img id="artifact-image" src="https://via.placeholder.com/640x360?text=Artifact+Image" alt="Artifact image" />
+          <div class="artifact-anim" id="artifact-anim" aria-hidden="true">★</div>
+        </div>
+
+        <div class="artifact-desc">
+          <h2 id="artifact-title">Artifact title</h2>
+          <p id="artifact-text" class="muted"></p>
+          <a id="artifact-map-link" href="#" target="_blank" class="map-link">Open interactive map (external)</a>
+        </div>
+      </div>
+
+      <div class="artifact-right">
+        <h3>Mini Quiz</h3>
+        <div id="artifact-quiz"></div>
+
+        <h3>Interactive Map (embedded)</h3>
+        <div class="map-embed-wrap" id="map-embed-wrap"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAT -->
+  <section id="page-chat" class="page hidden">
+    <h1>Culture Chat</h1>
+    <div class="chat-layout">
+      <div class="chat-left">
+        <div class="chat-box" id="chat-main"></div>
+        <form id="chat-form" class="chat-form" aria-label="Send message">
+          <input id="chat-input" placeholder="Ask about Marathi culture..." autocomplete="off" />
+          <button class="btn" type="submit">Send</button>
+        </form>
+      </div>
+      <aside class="chat-right">
+        <h3>Experts</h3>
+        <div id="chat-list" class="chat-list"></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- SEARCH -->
+  <section id="page-search" class="page hidden">
+    <h1>Search</h1>
+    <div class="search-panel">
+      <input id="search-input" type="search" placeholder="Search artifacts, stories..." />
+      <button id="search-btn" class="btn">Search</button>
+    </div>
+
+    <div class="search-meta">
+      <div>
+        <h4>Recommended</h4>
+        <div id="recommended-list" class="tag-list"></div>
+      </div>
+      <div>
+        <h4>Most searched</h4>
+        <div id="most-list" class="tag-list"></div>
+      </div>
+    </div>
+
+    <div id="search-results" class="search-results"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <small>© HeritageHub — free educational resource</small>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
